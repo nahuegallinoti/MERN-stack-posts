@@ -30,4 +30,7 @@ app.use(special_routes_1.default);
 app.use(auth_routes_1.default);
 app.use(posts_routes_1.default);
 app.use(express_1.default.static((0, path_1.join)(__dirname, "../client/build")));
+app.get("*", (req, res) => {
+    res.sendFile((0, path_1.join)(__dirname, "../client/build/index.html"));
+});
 exports.default = app;
