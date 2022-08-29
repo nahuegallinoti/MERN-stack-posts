@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  posts-web:
+    image: node
+    container_name: web-posts
+    ports:
+      - "3300:5000"
+    build: .
+    command: node dist/index.js
+
+  bd-mongo:
+    image: mongo
+    container_name: posts-mongo-db
+    ports: 
+      - "4300:27017"

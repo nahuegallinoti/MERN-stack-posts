@@ -12,8 +12,8 @@ const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
 const passport_1 = __importDefault(require("passport"));
 const passports_1 = __importDefault(require("./middlewares/passports"));
-const app = (0, express_1.default)();
 const path_1 = require("path");
+const app = (0, express_1.default)();
 //middlewares
 app.use((0, morgan_1.default)("dev"));
 app.use((0, cors_1.default)());

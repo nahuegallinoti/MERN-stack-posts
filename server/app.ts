@@ -7,8 +7,9 @@ import morgan from "morgan";
 import cors from "cors";
 import passport from "passport";
 import passportMiddleware from "./middlewares/passports";
-const app = express();
 import { join } from "path";
+
+const app = express();
 
 //middlewares
 app.use(morgan("dev"));

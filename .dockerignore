@@ -1,0 +1,6 @@
+.env.example
+.devcontainer
+.dockerignore
+.git
+.gitignore
+server
