@@ -1,10 +1,10 @@
 # descarga la imagen de node para ejecutarlo desde docker
 FROM node:18
 
-# es como cd a esa carpeta (se puede cambiar el nombre app). esto está en un sistema linux
+# es como cd a esa carpeta (se puede cambiar el nombre app). los directorios pertenecen al container
 WORKDIR /usr/src/app
 
-# copia el package json a la carpeta de arriba
+# copia el package json de la maquina anfitriona (mia) a la carpeta de arriba (del container)
 COPY package*.json ./
 
 # npm i
