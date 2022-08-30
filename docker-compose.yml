@@ -13,3 +13,6 @@ services:
     container_name: posts-mongo-db
     ports: 
       - "4300:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=nagu
+      - MONGO_INITDB_ROOT_PASSWORD=nagupass
