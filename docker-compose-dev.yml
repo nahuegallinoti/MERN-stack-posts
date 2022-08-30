@@ -1,12 +1,16 @@
 version: '3.9'
 services:
   posts-web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
     image: node
     container_name: web-posts
     ports:
       - "3300:5000"
-    build: .
     command: node dist/index.js
+    volumes:
+      - .:/usr/src/app
 
   bd-mongo:
     image: mongo

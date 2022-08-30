@@ -1,0 +1,21 @@
+# descarga la imagen de node para ejecutarlo desde docker
+FROM node:18
+
+RUN npm i -g tsc-watch
+# es como cd a esa carpeta (se puede cambiar el nombre app). los directorios pertenecen al container
+WORKDIR /usr/src/app
+
+# copia el package json de la maquina anfitriona (mia) a la carpeta de arriba (del container)
+COPY package*.json ./
+
+# npm i
+RUN npm install
+
+# copia todos los archivos del directorio a la carpeta app
+COPY . .
+
+# puerto que expone la app al container (mismo puerto en el que corre el server)
+EXPOSE 5000
+
+# ejecuta el comando
+CMD ["tsc-watch --onSuccess \"node dist/index.js\""]
